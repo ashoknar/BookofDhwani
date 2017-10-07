@@ -1,69 +1,58 @@
-
 @import url('https://fonts.googleapis.com/css?family=Pacifico');
 
-#info{
+#info {
 
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 30px;
     position: fixed;
     left: 5px;
     top: 5px;
     z-index: 9999;
 
-
-
 }
 
-body{
+body {
 
     overflow: hidden;
 }
 
-#slide-1{
-
+#slide-1 {
 
     height: 100vh;
     max-height: 100vh;
     position: relative;
 
-
-
 }
 
+#slide-1 .bcg {
 
-
-
-#slide-1 .bcg{
-
-     width: 100%;
+    width: 100%;
     height: 100%;
     background: dodgerblue;
 
 }
 
-.trans{
+.trans {
 
-     visibility: visible;
-     animation: anim 2s;
-
-
-}
-
-@keyframes anim{
-
-    0%{
-
-     opacity: 0;
-    -webkit-transform: translateY(70%);
-    -moz-transform: translateY(70%);
-    -ms-transform: translateY(70%);
-    -o-transform: translateY(70%);
-    transform: translateY(70%);
-
+    visibility: visible;
+    animation: anim 2s;
 
 }
 
-    100%{
+@keyframes anim {
+
+    0% {
+
+        opacity: 0;
+        -webkit-transform: translateY(70%);
+        -moz-transform: translateY(70%);
+        -ms-transform: translateY(70%);
+        -o-transform: translateY(70%);
+        transform: translateY(70%);
+
+    }
+
+    100% {
 
         opacity: 1;
         -webkit-transform: translateY(0%);
@@ -72,39 +61,75 @@ body{
         -o-transform: translateY(0%);
         transform: translateY(0%);
 
-
     }
-
 
 }
 
-
-.scroll{
+.scroll {
 
     position: absolute;
     height: auto;
     width: auto;
-    font-family: 'Pacifico',  cursive;
+    font-family: 'Pacifico', cursive;
     top: 0px;
-    left: 300px;
+    left: 25%;
     font-size: 30px;
     display: none;
     color: rgba(255, 255, 255, 0.8);
 
-
 }
 
-.scroll2{
+#flipbook .shadow,
+#flipbook.shadow {
+    -webkit-box-shadow: 0 4px 10px #666;
+    -moz-box-shadow: 0 4px 10px #666;
+    -ms-box-shadow: 0 4px 10px #666;
+    -o-box-shadow: 0 4px 10px #666;
+    box-shadow: 0 4px 10px #666;
+}
+
+.scroll2 {
 
     position: absolute;
-    top: 150px;
-    left: 1%;
-    width: 99%;
+    top: 125px;
+    left: 6%;
+    width: 96%;
     margin: 0;
     padding: 0;
-    font-family: 'Pacifico',  cursive;
+    font-family: 'Pacifico', cursive;
     font-size: 60px;
     color: dodgerblue;
 
+}
+
+@media screen and (max-width: 580px) {
+
+    .scroll {
+
+        position: absolute;
+        height: auto;
+        width: auto;
+        font-family: 'Pacifico', cursive;
+        top: 0px;
+        left: 30%;
+        font-size: 20px;
+        display: none;
+        color: rgba(255, 255, 255, 0.8);
+
+    }
+
+    .scroll2 {
+
+        position: absolute;
+        top: 125px;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        left: 0%;
+        font-family: 'Pacifico', cursive;
+        font-size: 60px;
+        color: dodgerblue;
+
+    }
 
 }

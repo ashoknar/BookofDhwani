@@ -22,7 +22,6 @@
 <body>
 
 
-
 <section id="slide-1">
 
     <div class="bcg"></div>
@@ -34,11 +33,11 @@
 
     <div class="scroll2">
 
-         <div class="flipbook-viewport">
+        <div class="flipbook-viewport">
             <div class="container">
                 <div class="flipbook">
-                    <div style="background-image:url(pages/1.jpg)"></div>
-                    <div style="background-image:url(pages/2.jpg)"></div>
+                    <div class="hard" style="background-image:url(pages/1.jpg)"></div>
+                    <div class="hard" style="background-image:url(pages/2.jpg)"></div>
                     <div style="background-image:url(pages/3.jpg)"></div>
                     <div style="background-image:url(pages/4.jpg)"></div>
                     <div style="background-image:url(pages/5.jpg)"></div>
@@ -47,8 +46,8 @@
                     <div style="background-image:url(pages/8.jpg)"></div>
                     <div style="background-image:url(pages/9.jpg)"></div>
                     <div style="background-image:url(pages/10.jpg)"></div>
-                    <div style="background-image:url(pages/11.jpg)"></div>
-                    <div style="background-image:url(pages/12.jpg)"></div>
+                    <div class="hard" style="background-image:url(pages/11.jpg)"></div>
+                    <div class="hard" style="background-image:url(pages/12.jpg)"></div>
                 </div>
             </div>
         </div>
@@ -139,28 +138,65 @@
 
         // Create the flipbook
 
-        $('.flipbook').turn({
-            // Width
+        if (window.matchMedia('(max-width: 780px)').matches) {
+            // do functionality on screens smaller than 768px
 
-            width: 1100,
 
-            // Height
+            var width = $(window).width() - 20;
+            var height = $(window).height() - 200;
+            console.log(width);
+            console.log(height);
 
-            height: 500,
 
-            // Elevation
+            $('.flipbook').turn({
+                // Width
 
-            elevation: 50,
+                width: width,
 
-            // Enable gradients
+                // Height
 
-            gradients: true,
+                height: height,
 
-            // Auto center this flipbook
+                // Elevation
 
-            autoCenter: true
+                elevation: 250,
 
-        });
+                // Enable gradients
+
+                gradients: true,
+
+                // Auto center this flipbook
+
+                autoCenter: true
+
+            });
+        }
+        else {
+            $('.flipbook').turn({
+                // Width
+
+                width: 1000,
+
+                // Height
+
+                height: 650,
+
+                // Elevation
+
+                elevation: 250,
+
+                // Enable gradients
+
+                gradients: true,
+
+                // Auto center this flipbook
+
+                autoCenter: true
+
+            });
+
+
+        }
     }
 
     yepnope({
