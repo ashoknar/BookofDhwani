@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
+          integrity="sha184-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+
+<div id="info"> 0</div>
+
+<section id="slide-1">
+
+    <div class="bcg"></div>
+
+    <div class="scroll"
+
+         data-top="transform: translateY(0px) scale(.5, .5); opacity: 1"
+         data--875-top="transform:translateY(-500px)  scale(1.5, 1.5); opacity: 0"
+         data-anchor-target="#slide-1"
+
+    >
+
+        <h1><strong> Dhwani 18'</strong></h1>
+
+
+    </div>
+
+    <div class="scroll"
+
+         data--875-top="transform: translateX(-1500px) translateY(0px); opacity: 0"
+         data--1800-top="transform:translateX(0px)  translateY(0px); opacity: 1"
+         data--2800-top="transform:translateX(0px) translateY(-900px);"
+         data-anchor-target="#slide-1"
+
+    >
+
+        <h1><strong> The Book Of Dhwani</strong></h1>
+
+
+    </div>
+
+    <div class="scroll2"
+
+
+         data--3000-top="transform: translateY(800px) scale(.2, .2) "
+         data--3200-top="transform: translateY(0px) scale(1, 1) "
+         data-anchor-target="#slide-1"
+
+    >
+        <div class="flipbook-viewport">
+            <div class="container">
+                <div class="flipbook">
+                    <div style="background-image:url(pages/1.jpg)"></div>
+                    <div style="background-image:url(pages/2.jpg)"></div>
+                    <div style="background-image:url(pages/3.jpg)"></div>
+                    <div style="background-image:url(pages/4.jpg)"></div>
+                    <div style="background-image:url(pages/5.jpg)"></div>
+                    <div style="background-image:url(pages/6.jpg)"></div>
+                    <div style="background-image:url(pages/7.jpg)"></div>
+                    <div style="background-image:url(pages/8.jpg)"></div>
+                    <div style="background-image:url(pages/9.jpg)"></div>
+                    <div style="background-image:url(pages/10.jpg)"></div>
+                    <div style="background-image:url(pages/11.jpg)"></div>
+                    <div style="background-image:url(pages/12.jpg)"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript" src="js/turnjs4/extras/modernizr.2.5.3.min.js"></script>
+
+<script type="text/javascript">
+    function loadApp() {
+
+        // Create the flipbook
+
+        $('.flipbook').turn({
+            // Width
+
+            width: 500,
+
+            // Height
+
+            height: 300,
+
+            // Elevation
+
+            elevation: 50,
+
+            // Enable gradients
+
+            gradients: true,
+
+            // Auto center this flipbook
+
+            autoCenter: true
+
+        });
+    }
+
+    yepnope({
+        test: Modernizr.csstransforms,
+        yep: ['js/turnjs4/lib/turn.js'],
+        nope: ['js/turnjs4/lib/turn.html4.min.js'],
+        complete: loadApp
+    });
+</script>
+
+
+</div>
+
+
+<script type="text/javascript" src="js/skrollr-master/dist/skrollr.min.js"></script>
+<script type="text/javascript">
+    var s = skrollr.init({
+        render: function (data) {
+            //Log the current scroll position.
+            $('#info').text(data.curTop);
+        }
+    });
+</script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+        integrity="sha184-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO1SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+        crossorigin="anonymous"></script>
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
