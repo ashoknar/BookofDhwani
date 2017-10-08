@@ -28,28 +28,30 @@
 
     <div class="scroll ">
 
-        <h1><strong> The Book of Dhwani 2.0</strong></h1>
+        <h1><strong> The Book of Dhwani </strong></h1>
     </div>
 
-    <div class="scroll2">
+    <div class="scroll2" id="scroll2">
 
         <div class="flipbook-viewport">
-            <div class="container">
+
                 <div class="flipbook">
-                    <div class="hard" style="background-image:url(pages/1.jpg)"></div>
-                    <div class="hard" style="background-image:url(pages/2.jpg)"></div>
-                    <div style="background-image:url(pages/3.jpg)"></div>
-                    <div style="background-image:url(pages/4.jpg)"></div>
-                    <div style="background-image:url(pages/5.jpg)"></div>
-                    <div style="background-image:url(pages/6.jpg)"></div>
-                    <div style="background-image:url(pages/7.jpg)"></div>
-                    <div style="background-image:url(pages/8.jpg)"></div>
-                    <div style="background-image:url(pages/9.jpg)"></div>
-                    <div style="background-image:url(pages/10.jpg)"></div>
-                    <div class="hard" style="background-image:url(pages/11.jpg)"></div>
-                    <div class="hard" style="background-image:url(pages/12.jpg)"></div>
+                    <div class="" style="background-image:url(pages/1.png); background-size: 100%"></div>
+                    <div class="" style="background-image:url(pages/2.png); background-size: 100%"></div>
+                    <div style="background-image:url(pages/3.png);background-size: 100%"></div>
+                    <div style="background-image:url(pages/4.png); background-size: 100%"></div>
+                    <div style="background-image:url(pages/5.png); background-size: 100%"></div>
+                    <div style="background-image:url(pages/6.png); background-size: 100%"></div>
+                    <div style="background-image:url(pages/7.png); background-size: 100%"></div>
+                    <div style="background-image:url(pages/8.png); background-size: 100%"></div>
+                    <div style="background-image:url(pages/9.png); background-size: 100%"></div>
+                    <div style="background-image:url(pages/10.png); background-size: 100%"></div>
+                    <div style="background-image:url(pages/11.png); background-size: 100%"></div>
+                    <div style="background-image:url(pages/12.png); background-size: 100%"></div>
+                    <div class="hard" style="background-image:url(pages/13.png); background-size: 100%"></div>
+                    <div class="hard" style="background-image:url(pages/14.png); background-size: 100%"></div>
                 </div>
-            </div>
+
         </div>
     </div>
 
@@ -137,67 +139,59 @@
     function loadApp() {
 
         // Create the flipbook
-
-        if (window.matchMedia('(max-width: 780px)').matches) {
-            // do functionality on screens smaller than 768px
-
-
-            var width = $(window).width() - 20;
-            var height = $(window).height() - 200;
-            console.log(width);
-            console.log(height);
+        var windowWidth = $(window).width();
+        var width;
+        var height;
+        var left;
+        var display;
 
 
-            $('.flipbook').turn({
-                // Width
 
-                width: width,
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            width =  windowWidth;
+            left = (windowWidth-width)/2;
+            height = width*2;
+            display = "single";
+             $('#scroll2').css({"width":width+"px","left":"0px"});
+        }else {
 
-                // Height
+            width =  windowWidth - (windowWidth*32)/100;
+            left = (windowWidth-width)/2;
+            height = width*0.7;
+            display = "double";
 
-                height: height,
-
-                // Elevation
-
-                elevation: 250,
-
-                // Enable gradients
-
-                gradients: true,
-
-                // Auto center this flipbook
-
-                autoCenter: true
-
-            });
-        }
-        else {
-            $('.flipbook').turn({
-                // Width
-
-                width: 1000,
-
-                // Height
-
-                height: 650,
-
-                // Elevation
-
-                elevation: 250,
-
-                // Enable gradients
-
-                gradients: true,
-
-                // Auto center this flipbook
-
-                autoCenter: true
-
-            });
-
+            $('#scroll2').css({"left": left+"px"});
 
         }
+
+        //Initialize Flipbook
+         $('.flipbook').turn({
+            // Width
+
+            width: width,
+
+            // Height
+
+            height: height,
+
+            // Elevation
+
+            elevation: 250,
+
+            // Enable gradients
+
+            gradients: true,
+
+            // Auto center this flipbook
+
+            autoCenter: true,
+
+            display:display
+
+         });
+
     }
+
 
     yepnope({
         test: Modernizr.csstransforms,
@@ -205,6 +199,14 @@
         nope: ['js/turnjs4/lib/turn.html4.min.js'],
         complete: loadApp
     });
+
+
+ /*   setTimeout(function () {
+        $(".flipbook").turn("next");
+    }, 3000);
+
+*/
+
 </script>
 
 
