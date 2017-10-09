@@ -71,15 +71,27 @@ body {
     font-family: 'Pacifico', cursive;
     top: 0px;
     text-align: center;
-    font-size: 30px;
     display: none;
-    color: rgba(34, 137, 189, 1);
-    transform: scale(1, 1);
-    transition: linear 500ms;
 
 }
 
-.scroll:hover {
+.scroll h1 {
+    transform: scale(1, 1);
+    transition: linear 500ms;
+    font-size: 40px;
+    color: rgba(34, 137, 189, 1);
+
+}
+
+.scroll p {
+
+    color: rgba(255, 255, 255, .5);
+    font-family: 'Pacifico', cursive;
+    font-size: 15px;
+
+}
+
+.scroll h1:hover {
     transition: ease-in 500ms;
     transform: scale(1.1, 1.1);
 
@@ -132,10 +144,12 @@ body {
         width: auto;
         font-family: 'Pacifico', cursive;
         top: 0px;
-        font-size: 20px;
+        text-align: center;
         display: none;
         color: rgba(34, 137, 189, 0.8);
 
     }
+
+
 
 }
