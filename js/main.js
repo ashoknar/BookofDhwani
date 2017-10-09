@@ -3,8 +3,8 @@
 
 
 $('.bcg').particleground({
-   dotColor: '#5cbdaa',
-    lineColor: '#5cbdaa'
+   dotColor: '#183cbd',
+    lineColor: '#132fbd'
 });
 
 $(document).ready(function () {
